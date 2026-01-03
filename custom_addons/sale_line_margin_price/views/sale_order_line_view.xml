@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit sale order form view to add margin fields to order lines -->
+        <record id="view_order_form_margin_price" model="ir.ui.view">
+            <field name="name">sale.order.form.margin.price</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+
+                <!-- Add margin_percent and cost_price fields after price_unit in the inline list view -->
+                <xpath expr="//field[@name='order_line']//list//field[@name='price_unit']" position="after">
+                    <field name="margin_percent" optional="show"/>
+                    <field name="cost_price" readonly="1" optional="hide"/>
+                </xpath>
+
+                <!-- Add margin_percent and cost_price fields after price_unit in the form popup view -->
+                <xpath expr="//field[@name='order_line']//form//field[@name='price_unit']" position="after">
+                    <label for="margin_percent"/>
+                    <div name="margin_percent">
+                        <field name="margin_percent" class="oe_inline"/> %
+                    </div>
+                    <field name="cost_price" readonly="1"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

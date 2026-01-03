@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sale Line Margin Pricing</title>
+    <style>
+        .tl_primary { color: #004853; }
+        .tl_bg_primary { background-color: #004853; }
+        .tl_accent { color: #FF2727; }
+        .tl_bg_gradient { background: linear-gradient(180deg, #0A4650E3 0%, #0A4650CC 100%); }
+    </style>
+</head>
+<body>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan tl_primary">Sale Line Margin Pricing</h2>
+        <h3 class="oe_slogan" style="color:#295A61;">Automate Your Cost-Plus Pricing Strategy</h3>
+        <p class="oe_mt32 text-center">
+            Stop manually calculating sale prices! Let Odoo automatically compute selling prices
+            based on your product costs and desired profit margins. Perfect for businesses using
+            cost-plus pricing strategies.
+        </p>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan tl_primary">Key Features</h2>
+        <div class="oe_span6">
+            <div class="oe_row_img oe_centered">
+                <img class="oe_picture oe_screenshot" src="screenshot_1.png" alt="Margin Configuration">
+            </div>
+        </div>
+        <div class="oe_span6">
+            <h3 class="oe_mb16">✓ Configurable Margin Per Line</h3>
+            <p class="oe_mb16">
+                Set different margin percentages for each quotation line. Default margin is 20%,
+                but you can customize it for any product or customer.
+            </p>
+            <h3 class="oe_mb16">✓ Automatic Price Calculation</h3>
+            <p class="oe_mb16">
+                Selling price automatically calculated as: <strong>Cost × (1 + Margin%)</strong>.
+                No manual calculations needed!
+            </p>
+            <h3 class="oe_mb16">✓ Real-Time Updates</h3>
+            <p class="oe_mb16">
+                Change the margin percentage and watch the price update instantly. Change the product
+                and the price recalculates automatically based on the new cost.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span6">
+            <h3 class="oe_mb16">✓ Cost Visibility</h3>
+            <p class="oe_mb16">
+                See the product cost price directly on the quotation line for better decision-making.
+                Optional column keeps your interface clean.
+            </p>
+            <h3 class="oe_mb16">✓ Safe & Controlled</h3>
+            <p class="oe_mb16">
+                Prices automatically lock when you confirm a quotation. Changes to margin percentage
+                won't affect confirmed sales orders—protecting your revenue.
+            </p>
+            <h3 class="oe_mb16">✓ Pricelist Compatible</h3>
+            <p class="oe_mb16">
+                Works alongside your existing pricelist functionality. The margin-based price overrides
+                pricelist prices when you change the margin or product in draft quotations.
+            </p>
+        </div>
+        <div class="oe_span6">
+            <div class="oe_row_img oe_centered">
+                <img class="oe_picture oe_screenshot" src="screenshot_2.png" alt="Price Calculation">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan tl_primary">Perfect For</h2>
+        <div class="oe_span4">
+            <div class="oe_box_image">
+                <h3>🏭 Manufacturers</h3>
+                <p>
+                    Calculate prices based on production costs with consistent markup percentages.
+                </p>
+            </div>
+        </div>
+        <div class="oe_span4">
+            <div class="oe_box_image">
+                <h3>🛒 Wholesalers</h3>
+                <p>
+                    Maintain profit margins across different product lines and customer segments.
+                </p>
+            </div>
+        </div>
+        <div class="oe_span4">
+            <div class="oe_box_image">
+                <h3>🔧 Service Companies</h3>
+                <p>
+                    Price services dynamically based on costs with variable margin strategies.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan tl_primary">How It Works</h2>
+        <div class="oe_span12">
+            <h3 class="oe_mb16">Simple 3-Step Process:</h3>
+            <ol class="oe_mt16">
+                <li class="oe_mb8">
+                    <strong>Add a product to your quotation</strong> - The system reads the product's cost price
+                </li>
+                <li class="oe_mb8">
+                    <strong>Set your desired margin percentage</strong> - Default is 20%, but customize as needed
+                </li>
+                <li class="oe_mb8">
+                    <strong>Watch the price calculate automatically</strong> - Selling price = Cost × (1 + Margin%)
+                </li>
+            </ol>
+            <p class="oe_mt32">
+                <strong>Example:</strong> Product cost is $100, margin is 50% → Selling price automatically becomes $150
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan tl_primary">Technical Details</h2>
+        <div class="oe_span6">
+            <h3 class="oe_mb16">Fields Added</h3>
+            <ul>
+                <li><strong>Margin %</strong>: Configurable percentage field (default: 20%)</li>
+                <li><strong>Cost Price</strong>: Computed readonly field showing product cost</li>
+            </ul>
+            <h3 class="oe_mb16 oe_mt32">Calculation Formula</h3>
+            <p><code>price_unit = standard_price × (1 + margin_percent / 100)</code></p>
+        </div>
+        <div class="oe_span6">
+            <h3 class="oe_mb16">When Prices Update</h3>
+            <ul>
+                <li>✓ When adding a new product to a quotation line</li>
+                <li>✓ When changing the margin percentage (draft/sent only)</li>
+                <li>✓ When changing the product on an existing line</li>
+                <li>✗ After quotation confirmation (prices are locked)</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan tl_primary">Installation & Configuration</h2>
+        <div class="oe_span12">
+            <h3 class="oe_mb16">Installation</h3>
+            <ol class="oe_mt16">
+                <li class="oe_mb8">Install the module from Apps menu</li>
+                <li class="oe_mb8">No configuration needed - works immediately!</li>
+                <li class="oe_mb8">Open any quotation and start using margin-based pricing</li>
+            </ol>
+
+            <h3 class="oe_mb16 oe_mt32">Usage</h3>
+            <ol class="oe_mt16">
+                <li class="oe_mb8">Go to <strong>Sales → Quotations → Create</strong></li>
+                <li class="oe_mb8">Add a product to the order lines</li>
+                <li class="oe_mb8">Notice the new <strong>"Margin %"</strong> column with default 20%</li>
+                <li class="oe_mb8">Adjust the margin percentage as needed</li>
+                <li class="oe_mb8">Watch the <strong>Unit Price</strong> update automatically</li>
+                <li class="oe_mb8">Optional: Show the <strong>Cost Price</strong> column for visibility</li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan tl_primary">Compatibility & Requirements</h2>
+        <div class="oe_span12 text-center">
+            <p class="oe_mt16">
+                <strong>Odoo Version:</strong> 19.0 (Community & Enterprise)
+            </p>
+            <p class="oe_mt16">
+                <strong>Dependencies:</strong> Sales Management, Product
+            </p>
+            <p class="oe_mt16">
+                <strong>License:</strong> LGPL-3
+            </p>
+            <p class="oe_mt32">
+                ✓ Fully tested with automated test suite<br>
+                ✓ No external dependencies<br>
+                ✓ Clean and maintainable code
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan tl_primary">Support & Updates</h2>
+        <div class="oe_span12 text-center">
+            <p class="oe_mt16">
+                Need help or have questions? We're here to support you!
+            </p>
+            <p class="oe_mt16">
+                <strong>Email:</strong> support@thoughtlogik.com<br>
+                <strong>Website:</strong> https://thoughtlogik.com
+            </p>
+            <p class="oe_mt32">
+                <em>We provide regular updates and are committed to maintaining
+                compatibility with future Odoo releases.</em>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12 text-center">
+            <h2 class="oe_slogan tl_primary">Ready to Automate Your Pricing?</h2>
+            <p class="oe_mt32">
+                Install <strong>Sale Line Margin Pricing</strong> today and start saving time
+                on price calculations!
+            </p>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
